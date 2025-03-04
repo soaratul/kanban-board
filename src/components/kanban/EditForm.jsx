@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import { memo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { clearSelectedCardId, selectColumns } from "../../redux/kanbanSlice";
 import { initialColumns } from "./Board";

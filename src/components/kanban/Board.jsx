@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors } from '@dnd-kit/core';
 import { arrayMove, sortableKeyboardCoordinates } from '@dnd-kit/sortable';
 import { KanbanColumn } from './Column';
@@ -66,9 +66,8 @@ export default function KanbanBoard() {
     };
   }, []);
 
-  const [activeId, setActiveId] = useState(null); // Track the active card being dragged
+  const [activeId, setActiveId] = useState(null);
 
-  // Save columns to local storage whenever it changes
   useEffect(() => {
     dispatch(saveColumns(columns));
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(columns));
